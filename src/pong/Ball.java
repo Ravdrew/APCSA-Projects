@@ -82,7 +82,7 @@ public class Ball extends Rectangle{
 			scoreBoard.setLeftScore(scoreBoard.getLeftScore() + 1);
 			leftPaddle.setBoostQuantity(100);
 			rightPaddle.setBoostQuantity(100);
-			this.move((int)(GDV5.getMaxWindowX()/2 - this.getWidth()/2), (int)(GDV5.getMaxWindowY()/2 - this.getHeight()/2));
+			this.setLocation((int)(GDV5.getMaxWindowX()/2 - this.getWidth()/2), (int)(GDV5.getMaxWindowY()/2 - this.getHeight()/2));
 			this.setHitLocation(0);
 			xSpeed = -1 * this.getStartSpeed();
 			if(ySpeed > this.getStartSpeed()) ySpeed = this.getStartSpeed();
@@ -93,7 +93,7 @@ public class Ball extends Rectangle{
 			scoreBoard.setRightScore(scoreBoard.getRightScore() + 1);
 			leftPaddle.setBoostQuantity(100);
 			rightPaddle.setBoostQuantity(100);
-			this.move((int)(GDV5.getMaxWindowX()/2 - this.getWidth()/2), (int)(GDV5.getMaxWindowY()/2 - this.getHeight()/2));
+			this.setLocation((int)(GDV5.getMaxWindowX()/2 - this.getWidth()/2), (int)(GDV5.getMaxWindowY()/2 - this.getHeight()/2));
 			this.setHitLocation(0);
 			xSpeed = this.getStartSpeed();
 			if(ySpeed > this.getStartSpeed()) ySpeed = this.getStartSpeed();

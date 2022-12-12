@@ -18,9 +18,13 @@ import java.awt.Color;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -28,13 +32,16 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
-public abstract class GDV5 extends Canvas implements Runnable, KeyListener {
+public abstract class GDV5 extends Canvas implements Runnable, KeyListener, MouseListener, MouseMotionListener {
 
 	private int FramesPerSecond;
 	public static boolean[] KeysPressed;
 	private static int MAX_WINDOW_X = 1200;
 	private static int MAX_WINDOW_Y = 600;
 	private static int PADDING = 2;
+	private static Point mouse_p = null;
+    private static int mouse_x;
+    private static int mouse_y;
 
 	// it is your responsibility to handle the release on keysTyped
 	public static boolean[] KeysTyped;
@@ -47,6 +54,8 @@ public abstract class GDV5 extends Canvas implements Runnable, KeyListener {
 		FramesPerSecond = frames;
 
 		this.addKeyListener(this);
+		this.addMouseListener(this);
+		this.addMouseMotionListener(this);
 
 		// key setup
 		KeysPressed = new boolean[KeyEvent.KEY_LAST];
@@ -92,6 +101,10 @@ public abstract class GDV5 extends Canvas implements Runnable, KeyListener {
 		this.FramesPerSecond = num;
 	}
 
+	public static int sgn(int in) {
+		return in/Math.abs(in);
+	}
+	
 	public abstract void update();
 
 	public abstract void draw(Graphics2D win);
@@ -172,6 +185,61 @@ public abstract class GDV5 extends Canvas implements Runnable, KeyListener {
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
 
+	}
+	
+	@Override
+    public void mouseMoved(MouseEvent me) {
+        mouse_p = me.getPoint();
+        mouse_x = mouse_p.x;
+        mouse_y = mouse_p.y;
+    }
+	
+	public static int getMouseX() {
+		return mouse_x;
+	}
+	
+	public static int getMouseY() {
+		return mouse_x;
+	}
+	
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseDragged(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	/*
