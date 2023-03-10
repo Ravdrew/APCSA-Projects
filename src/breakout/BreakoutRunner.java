@@ -25,7 +25,7 @@ public class BreakoutRunner extends GDV5 {
 		// TODO Auto-generated method stub
 		//super();
 		GDV5.setMaxWindowX(488);
-		GDV5.setMaxWindowY(760);
+		GDV5.setMaxWindowY(600); //760
 		BreakoutRunner b = new BreakoutRunner();
 		b.start();
 	}
