@@ -37,7 +37,7 @@ public class SnakeRunner extends GDV5{
 		//filenames[0] = "hungy.wav";
 		s1 = new SoundDriverHo(filenames, this);
 		s1.play(0);
-		s1.setVolume(0, (float) -15);
+		s1.setVolume(0, (float) -25);
 		for(Fruit f:fruitList) {
 			System.out.println("Row: " + f.getRow() + " Col: " + f.getCol());
 		}
